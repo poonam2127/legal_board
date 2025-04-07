@@ -1,13 +1,13 @@
-%h1
+%h3
   %strong Que:
   = question.title
-%p
+%div
   %strong Category:
   = question.category
-%p
+%div
   %strong Description:
   = question.body
-%p
+%div
   %strong Status:
   %span{id: "status_answers_#{@question.id}"}
-    = question.status
+    = question.status.capitalize

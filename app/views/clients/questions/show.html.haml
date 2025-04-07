@@ -5,6 +5,6 @@
       %div.mb-2{id: "answer_#{a.id}"}
         = render 'single_answer', answer: a, question: @question
   - else
-    %h3 There is no answer yet.
+    %h5 There is no answer yet.
 .mt-2
   = link_to "Back to Questions", clients_questions_path, class: 'btn btn-primary'

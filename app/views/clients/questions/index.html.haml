@@ -5,9 +5,9 @@
     - @questions.each do |question|
       .list-group-item
         %h5= link_to question.title, clients_question_path(question)
-        %p= truncate(question.body, length: 100)
-        %p
-          Status: #{question.status}
+        %div= truncate(question.body, length: 150)
+        %div
+          %b Status: #{question.status.capitalize}
         %small.text-muted
           Category: #{question.category}
         - if question.answers.any? 
