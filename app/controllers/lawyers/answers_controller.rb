@@ -15,7 +15,7 @@ module Lawyers
       @answer.question = @question
 
       if @answer.save
-        flash[:success] = "Simulated payment request sent."
+        flash[:success] = 'Simulated payment request sent.'
         redirect_to lawyers_questions_path
       else
         render :new, status: :unprocessable_entity
