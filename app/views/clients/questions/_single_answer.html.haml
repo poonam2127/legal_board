@@ -1,0 +1,14 @@
+.mt-2.border.p-3.rounded
+  - if current_user == question.user && answer.paid
+    %p 
+      = "Answer by Lawyer: #{answer.user.name}"
+    %p
+      %strong Advice:
+      = answer.response_text
+    %p.text-sm.text-gray-500
+      Proposed Fee: £#{answer.proposed_fee}
+  - else
+    %p 
+      = "Answer by Lawyer: #{answer.user.name}"
+    %p.italic This answer is locked until payment is approved.
+    = button_to "Approve Payment (£#{answer.proposed_fee})", approve_answer_payment_clients_question_path(question, answer), method: :post, class: "btn btn-primary btn-block"

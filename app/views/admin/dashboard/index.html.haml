@@ -1,0 +1,14 @@
+%h1 Admin Dashboard
+.card.m-2
+  .card-body
+    %h5.card-title Opened Questions
+    %p.card-text= @open_que_count
+.card.m-2
+  .card-body
+    %h5.card-title Total Paid Answers
+    %p.card-text= @paid_answers_count
+.card.m-2
+  .card-body
+    %h5.card-title Simulated Revenue
+    %p.card-text
+      £#{@simulated_revenue}

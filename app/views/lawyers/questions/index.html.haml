@@ -1,0 +1,6 @@
+= link_to "Answered Questions", answered_lawyers_questions_path, class: 'btn btn-primary'
+%h1.text-center.mb-4 Open Legal Questions
+- if @questions.any?
+  = render 'list', questions: @questions
+- else
+  %p No open questions at the moment.
