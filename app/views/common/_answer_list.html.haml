@@ -1,0 +1,12 @@
+.list-group
+  - answers.each do |answer|
+    .list-group-item
+      - if (current_user == @question.user && answer.paid) || answer.user == current_user
+        %p
+          %strong Advice:
+          = answer.response_text
+        %small.text-muted
+          Proposed fee: #{answer.proposed_fee} 
+      - else
+        %p.italic This answer is locked until payment is approved.
+        = button_to "Approve Payment (£#{answer.proposed_fee})", approve_answer_payment_clients_question_path(@question, answer), method: :post, class: "btn btn-primary btn-block"

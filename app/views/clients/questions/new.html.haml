@@ -1,0 +1,15 @@
+%h1 Ask a Legal Question
+= form_with model: [:clients, @question], local: true do |f|
+  .mt-2
+    = f.label :title
+    = f.text_field :title, class: "form-control", required: true
+  .mt-2
+    = f.label :body, "Question Details"
+    = f.text_area :body, rows: 6, class: "form-control", required: true
+  .mt-2
+    = f.label :category
+    = f.select :category, ['Family Law', 'Property', 'Wills & Probate', 'Employment', 'Other'], {}, class: "form-control"
+  .mt-2
+    = f.submit "Submit Question", class: "btn btn-primary btn-block"
+.mt-2
+  = link_to "Back to My Questions", clients_questions_path, class: 'btn btn-primary'

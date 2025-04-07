@@ -1,0 +1,13 @@
+%h1
+  %strong Que:
+  = question.title
+%p
+  %strong Category:
+  = question.category
+%p
+  %strong Description:
+  = question.body
+%p
+  %strong Status:
+  %span{id: "status_answers_#{@question.id}"}
+    = question.status
