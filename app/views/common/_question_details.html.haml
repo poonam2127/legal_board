@@ -5,9 +5,10 @@
   %strong Category:
   = question.category
 %div
-  %strong Description:
-  = question.body
-%div
   %strong Status:
   %span{id: "status_answers_#{@question.id}"}
     = question.status.capitalize
+%label
+  %strong Description:
+%div
+  = question.body

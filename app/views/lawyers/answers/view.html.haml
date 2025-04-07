@@ -1,6 +1,6 @@
 = render 'common/question_details', question: @question
 - if @answers.any?
-  = render 'common/answer_list', answers: @answers
+  = render 'common/answer_list', answers: @answers, question: @question
 - else
   %h5 You have not answered this question.
 - if @question.open?

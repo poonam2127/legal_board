@@ -92,10 +92,18 @@ eg: Client cannot access lawyer pages with answers or admin dashboard (in case o
 
 ## Stretch Goals Tackled
 - Turbo-powered dynamic updates (no page reloads) when:
-  Users approve payments - can view answer with question status updated
+
+  => Users approve payments - can view answer with question status updated
+
+  => Manage multiple answers given by different lawyer
+
 - Implement Feature for lawyer::can see answered questions
 - Client::add small badge on index page with question if answer is available
+- On Lawyer: question show page: Add badge for paid answer eg: Paid by Client1
+- sign up by deafult for client role
 - Rspec for model: question, answer and COMPLEX INTERACTION for approve payment
+- Haml for haml template file format
+- Rubocop for code analyzer and code formatter
 - Add flash meassges
 - email notification by logger when answer submits
 - Admin dashboard page with cards: total number of paid question, open questions, total payment revenue
