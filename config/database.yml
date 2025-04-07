@@ -81,6 +81,7 @@ test:
 production:
   primary: &primary_production
     <<: *default
+    url: <%= ENV['DATABASE_URL'] %>
     database: legal_qa_board_production
     username: legal_qa_board
     password: <%= ENV["LEGAL_QA_BOARD_DATABASE_PASSWORD"] %>
