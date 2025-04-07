@@ -17,7 +17,7 @@ module Clients
       @question = current_user.questions.build(question_params)
 
       if @question.save
-        flash[:success] = "Question Created Succssfully."
+        flash[:success] = 'Question Created Succssfully.'
         redirect_to clients_questions_path
       else
         render :new, status: :unprocessable_entity
