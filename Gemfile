@@ -63,4 +63,5 @@ group :test do
 end
 gem 'devise'
 gem 'haml'
+gem 'pagy'
 gem 'rubocop'
