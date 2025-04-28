@@ -8,7 +8,6 @@
     %meta{content: "yes", name: "mobile-web-app-capable"}/
     = csrf_meta_tags
     = csp_meta_tag
-    = turbo_include_tags
     = yield :head
     %link{href: "/icon.png", rel: "icon", type: "image/png"}/
     %link{href: "/icon.svg", rel: "icon", type: "image/svg+xml"}/
@@ -17,7 +16,7 @@
     %link{href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css", rel: "stylesheet"}/
     %link{href: "https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/dist/mdb5/standard/core.min.css", rel: "stylesheet"}/
     %link{href: "https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/mdb5/fonts/roboto-subset.css?ver=3.9.0-update.5", id: "roboto-subset.css-css", media: "all", rel: "stylesheet", type: "text/css"}/
-    = javascript_include_tag "application", type: "module"
+    = javascript_importmap_tags
   %body
   .container.mx-auto.p-4
     .mt-8
