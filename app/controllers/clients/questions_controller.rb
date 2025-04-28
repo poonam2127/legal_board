@@ -6,7 +6,11 @@ module Clients
     before_action :set_question, only: %i[show approve_answer_payment]
 
     def index
-      @questions = current_user.questions.order(created_at: :desc)
+      @pagy, @questions = pagy_countless(current_user.questions.order(created_at: :desc))
+      respond_to do |format|
+        format.html
+        format.turbo_stream
+      end
     end
 
     def new

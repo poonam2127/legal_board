@@ -1,0 +1,10 @@
+.list-group-item
+  %h5= link_to question.title, clients_question_path(question)
+  %div= truncate(question.body, length: 150)
+  %div
+    %b Status: #{question.status.capitalize}
+  %small.text-muted
+    Category: #{question.category}
+  - if question.answers.any? 
+    %div
+      %span.badge.badge-success Answers Available

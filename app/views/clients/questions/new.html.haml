@@ -1,5 +1,5 @@
 %h1 Ask a Legal Question
-= form_with model: [:clients, @question], local: true do |f|
+= form_with model: [:clients, @question], data: {turbo: false} do |f|
   .mt-2
     = f.label :title
     = f.text_field :title, class: "form-control", required: true
