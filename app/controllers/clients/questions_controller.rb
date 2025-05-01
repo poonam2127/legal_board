@@ -6,7 +6,11 @@ module Clients
     before_action :set_question, only: %i[show approve_answer_payment]
 
     def index
-      @pagy, @questions = pagy_countless(current_user.questions.order(created_at: :desc))
+      @pagy, @questions = pagy_countless(
+        current_user.questions
+                    .includes(:answers)
+                    .order(created_at: :desc)
+      )
       respond_to do |format|
         format.html
         format.turbo_stream
@@ -37,16 +41,7 @@ module Clients
       @answer.approved_payment
 
       respond_to do |format|
-        format.turbo_stream do
-          render turbo_stream: [
-            turbo_stream.replace("status_answers_#{@question.id}", 'Answered'),
-            turbo_stream.replace(
-              "answer_#{@answer.id}",
-              partial: 'single_answer',
-              locals: { answer: @answer, question: @question }
-            )
-          ]
-        end
+        format.turbo_stream
         format.html do
           redirect_to clients_question_path(@question),
                       notice: 'Payment approved. You can now view the answer.'

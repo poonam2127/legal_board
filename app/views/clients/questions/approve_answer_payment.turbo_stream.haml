@@ -1,0 +1,2 @@
+= turbo_stream.replace("status_answers_#{@question.id}", 'Answered')
+= turbo_stream.replace("answer_#{@answer.id}", partial: 'single_answer', locals: { answer: @answer, question: @question })

@@ -14,11 +14,9 @@ class User < ApplicationRecord
 
   after_initialize :set_default_role, if: :new_record?
 
+  private
+
   def set_default_role
     self.role ||= :client
-  end
-
-  def answered_questions
-    answers.includes(:question).where(questions: { status: 'answered' }).map(&:question).uniq
   end
 end
