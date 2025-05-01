@@ -3,7 +3,8 @@
   %h1.text-center.mb-4 Recent Questions
   #questions.list-group
     = render partial: "question", collection: @questions, as: :question
-  #next_link.mt-2
-    = link_to "Load More", pagy_url_for(@pagy, @pagy.next), data: { turbo_stream: true }, class: 'btn btn-primary'       
+  - if @pagy.next.present?
+    #next_link.mt-2
+      = link_to "Load More", pagy_url_for(@pagy, @pagy.next), data: { turbo_stream: true }, class: 'btn btn-primary'       
 - else
   %h3.text-center.mb-4 No questions at the moment.
