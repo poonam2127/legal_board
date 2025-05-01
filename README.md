@@ -7,7 +7,12 @@ Built with Ruby on Rails 8.
 ------------------------------------------------------------------------------
 
 # Live Demo
-https://desolate-fjord-14053-c7a0e62bf0d7.herokuapp.com/
+
+# deploy using Render
+https://legal-board.onrender.com
+
+# deployed using Heroku - Removed due to charge of heroku
+https://desolate-fjord-14053-c7a0e62bf0d7.herokuapp.com/ 
 
 ------------------------------------------------------------------------------
 
