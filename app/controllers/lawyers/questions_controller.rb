@@ -4,11 +4,11 @@ module Lawyers
   # Lawyers Questions
   class QuestionsController < BaseController
     def index
-      @questions = Question.open.order(created_at: :desc)
+      @pagy, @questions = pagy(Question.open.order(created_at: :desc))
     end
 
     def answered
-      @questions = current_user.answered_questions
+      @pagy, @questions = pagy(AnsweredQuestionsService.new(current_user).call)
     end
   end
 end

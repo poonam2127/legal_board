@@ -2,5 +2,7 @@
 %h1.text-center.mb-4 Your Answered Questions
 - if @questions.any?
   = render 'list', questions: @questions
+  .d-flex.justify-content-center.mt-2
+    != pagy_bootstrap_nav(@pagy) if @pagy.pages > 1
 - else
   %h5 No Answered questions at the moment.
